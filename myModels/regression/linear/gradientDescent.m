@@ -3,18 +3,18 @@ function [theta] = gradientDescent(X,y,num,alpha)
 %   Detailed explanation goes here
     [m,n]=size(X);
     m=m(1)
-    theta=zeros(n,1)
-    X
-    y
+    theta=zeros(n,1);
+%     X
+%     y
 %     alpha
   for i=1:num
-    h=X*theta
+    h=X*theta;
     err=h-y;
     T=transpose(X);
     grad=(T*err);
-    grad=grad.*(alpha/(m))
+    grad=grad.*(alpha/(m));
 %     grad=alpha.*grad;
-    theta=theta-grad
+    theta=theta-grad;
   end
 end
 
