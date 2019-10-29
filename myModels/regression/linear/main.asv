@@ -1,0 +1,20 @@
+close all;
+clear all;
+clc;
+dataset=fopen('data.txt','r');
+formatSpec = '%d';
+sizeA=[2,Inf];
+data=fscanf(dataset,formatSpec,sizeA);
+
+data=transpose(data);
+[m,n]=size(data);
+X=data(:,1:n-1)
+% X=transpose(X);
+y=data(:,n-1);
+% y=transpose(y);
+theta=gradientDescent(X,y,1000,0.001);
+h=X*theta;
+hold on;
+scatter(X,h);
+plot(X,y);
+hold off;

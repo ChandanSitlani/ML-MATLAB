@@ -1,0 +1,15 @@
+function [theta,num] = gradientDescent(X,y,aplha)
+%GRADIENTDESCENT Summary of this function goes here
+%   Detailed explanation goes here
+    m=size(X);
+    m=m(1);
+    theta=zeros(1,m);
+  for i=1:num
+    h=X*theta;
+    err=h-y;
+    T=transpose(X);
+    grad=T*err/(m);
+    theta=theta-alpha*grad;
+  end
+end
+
