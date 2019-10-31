@@ -2,7 +2,7 @@ close all;
 clear all;
 clc;
 dataset=fopen('data.txt','r');
-formatSpec = '%d';
+formatSpec = '%f';
 sizeA=[2,Inf];
 data=fscanf(dataset,formatSpec,sizeA);
 
@@ -13,7 +13,7 @@ X=[o data(:,1:n-1)]
 % X=transpose(X);
 y=data(:,n);
 % y=transpose(y);
-theta=gradientDescent(X,y,10000,0.001)
+theta=gradientDescent(X,y,1000000,0.03)
 h=X*theta;
 data
 X

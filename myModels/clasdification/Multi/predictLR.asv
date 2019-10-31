@@ -1,0 +1,9 @@
+function [cl] = predictLogReg(X,theta)
+%PREDICTLOGREG Summary of this function goes here
+%   Detailed explanation goes here
+[m,n]=size(X)
+h=sigmoid(X*transpose(theta));
+[m,index]=max(h);
+cl=index;
+end
+

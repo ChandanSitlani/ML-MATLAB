@@ -1,4 +1,4 @@
-function [J] = gDcost(X,y,theta)
+function J = gDcost(X,y,theta)
 %GDCOST Summary of this function goes here
 %   Detailed explanation goes here
 m=length(X);
